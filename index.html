@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="w3.css">
+    <script src="main.js"></script>
+    <script src="loop.js"></script>
+</head>
+<body onload="updateCount()">
+    <div class="w3-bar w3-white" style="margin:10px">
+        <a class="w3-bar-item w3-button" style="width:50%" onclick="switchjobs()">Jobs</a>
+        <a class="w3-bar-item w3-button" style="width:50%" onclick="switchskills()">Skills</a>
+    </div>
+
+    <div class="jobs">
+        <h1 style="text-align: center;color:white;">Jobs</h1>
+        <div>
+            <p style="color:white;margin:5px;" id="firstjob">First Job : 0</p>
+            <div class="w3-border" style="margin:5px; width:300px; overflow: hidden; padding:5px;" onclick="filljob(); this.onclick=null;">
+                <div class="w3-white" style="height:10px;width:5%;padding:5px;overflow:hidden;" id="jobfill"></div>
+            </div>
+        </div>
+    </div>
+    <div class="skills" style="display: none;">
+        <h1 style="text-align: center; color: white;">Skills</h1>
+        <div>
+            <p style="color:white; margin:5px;" id="learnspeed">Learning Speed : 0</p>
+            <div class="w3-border" style="margin:5px; width:300px; overflow: hidden; padding:5px" onclick="filllearn(); this.onclick=null;">
+                <div class="w3-white" style="height:10px;width:5%; padding:5px; overflow:hidden;" id="learnfill"></div>
+            </div>
+        </div>
+    </div>
+    <p class="inv">G: 0 <br> S: 0 <br> C: 0</p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+* {
+    background-color: rgb(28, 28, 28);
+    user-select: none;
+}
+
+.inv {
+    position: absolute;
+    color: white;
+    bottom: 0;
+    padding: 5px;
+    margin: 5px;
+}
