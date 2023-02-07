@@ -13,11 +13,28 @@ var jobxpadd = 1;
 var jobxpreq = 100;
 var firstjoblevel = 0;
 var firstjobmulti = 1;
+var moneyxp = 10;
+var moneyxpadd = 1;
+var moneyxpreq = 100;
+var moneylevel = 0;
+var moneyskillmulti = 1;
+var currentjob = null;
+var currentskill = null;
+const jobbtn = document.getElementById("jobbar");
+const learnspeedbtn = document.getElementById("learnbar");
+const moneymultbtn = document.getElementById("moneybar");
+
+jobbtn.addEventListener("click", filljob);
+learnspeedbtn.addEventListener("click", filllearn);
+moneymultbtn.addEventListener("click", moneyfill);
 
 function filllearn(){
-    setInterval(() => {
-        xp += xpadd*multi
-    }, 10);
+       fillint = setInterval(() => {
+            xp += xpadd*multi
+        }, 10);
+        learnspeedbtn.removeEventListener("click", filllearn);
+        clearInterval(moneyint);
+        moneymultbtn.addEventListener("click", moneyfill);
 }
 
 function switchskills(){
@@ -37,4 +54,14 @@ function filljob(){
     setInterval(() => {
         copper += 1*multi;
     }, 1000);
+    jobbtn.removeEventListener("click", filljob);
+}
+
+function moneyfill(){
+        moneyint = setInterval(() => {
+            moneyxp += moneyxpadd*multi
+        }, 10);
+        moneymultbtn.removeEventListener("click", moneyfill);
+        clearInterval(fillint);
+        learnspeedbtn.addEventListener("click", filllearn);
 }
