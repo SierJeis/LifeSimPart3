@@ -11,22 +11,38 @@
 <body onload="updateCount()">
     <div style="margin: 10px;">
         <div class="w3-bar w3-white">
-            <a class="w3-bar-item w3-button" style="width:50%" onclick="switchjobs()">Jobs</a>
-            <a class="w3-bar-item w3-button" style="width:50%;" onclick="switchskills()">Skills</a>
+            <a class="w3-bar-item w3-button" style="width:33.3%;" onclick="switchjobs()">Jobs</a>
+            <a class="w3-bar-item w3-button" style="width:33.3%;" onclick="switchskills()">Skills</a>
+            <a class="w3-bar-item w3-button" style="width:33.3%;" onclick="switchshop()">Shop</a>
         </div>
     </div>
 
     <div class="jobs">
-        <h1 style="text-align: center;color:white;">Jobs</h1>
+        <h1 class="logo">Jobs</h1>
         <div>
-            <p style="color:white;margin:5px;" id="firstjob">First Job : 0</p>
-            <div class="w3-border" style="margin:5px; width:300px; overflow: hidden; padding:5px;" id="jobbar">
-                <div class="w3-white" style="height:10px;width:5%;padding:5px;overflow:hidden;" id="jobfill"></div>
-            </div>
+            <table class="w3-table" style="color:white;">
+                <tr>
+                    <th><p style="color:white;margin:5px;" id="firstjob">Beggar : 0</p></th>
+                <th>XP Gain</th>
+                <th>XP Required</th>
+                <th>Income</th>
+                </tr>
+                <tr>
+                    <td>
+                    <div class="w3-border" style="margin:5px; width:300px; overflow: hidden; padding:5px;" id="jobbar">
+                        <div class="w3-white" style="height:10px;width:5%;padding:5px;overflow:hidden;" id="jobfill"></div>
+                    </div>
+                </td>
+                <td id="xpgain">0</td>
+                <td id="xpreq">100</td>
+                <td style="color:brown;" id="firstjobincome">1c</td>
+                </tr>
+            </table>
         </div>
     </div>
+
     <div class="skills" style="display: none;">
-        <h1 style="text-align: center; color: white;">Skills</h1>
+        <h1 class="logo">Skills</h1>
         <div>
             <p style="color:white; margin:5px;" id="learnspeed">Learning Speed : 0</p>
             <div class="w3-border" style="margin:5px; width:300px; overflow: hidden; padding:5px" id="learnbar">
@@ -40,7 +56,26 @@
             </div>
         </div>
     </div>
-    <p class="inv">G: 0 <br> S: 0 <br> C: 0</p>
+
+    <div class="shop">
+        <h1 class="logo">Shop</h1>
+        <table class="w3-table" style="color:white;">
+            <tr>
+                <th>Item</th>
+                <th>Cost</th>
+                <th>Effect</th>
+                <th>Active</th>
+            </tr>
+            <tr>
+                <td><button class="w3-button w3-white" id="house">Tent</button></td>
+                <td>10c</td>
+                <td>Global XP Gain x1.1</td>
+                <td><span class="dot" id="housedot"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <p class="inv">Income : <br> Expense : <br> G: 0 <br> S: 0 <br> C: 0</p>
     <script src="main.js"></script>
     <script src="loop.js"></script>
 </body>
